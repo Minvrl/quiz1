@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace lesson_quiz
 {
@@ -16,7 +16,7 @@ namespace lesson_quiz
             }
 
             string text = "        salam";
-            FrontSpaces(ref text);
+            Console.WriteLine(FrontSpaces(text));
         }
         #region Task4
         //Verilmiş sözün tərsdən oxunuşunun özü ilə eyni olub olmadığnı tapan metod
@@ -63,27 +63,29 @@ namespace lesson_quiz
 
         #region Task6
         //Verilmiş yazının əvvəlindəki boşluqları silən metod
-
-        static void FrontSpaces(ref string text)
+        static string FrontSpaces(string str)
         {
-            string newText = "";
-            int startIndex = 0;
+            string newStr = "";
+            int startIndex = IlkIndex(str);
 
-            for(int i = 0; i< text.Length; i++)
+            if (startIndex == -1) return str;
+
+            for (int i = startIndex; i < str.Length; i++)
             {
-                if (text[i] != ' ')
-                    startIndex = i;
-                break;
+                newStr += str[i];
             }
 
-            for(int i = startIndex; i < text.Length; i++)
-            {
-                newText += text[i];
-            }
-            text = newText;
+            return newStr;
+        }
 
-            Console.WriteLine(newText);
-            
+        static int IlkIndex(string str)
+        {
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] != ' ') return i;
+            }
+
+            return -1;
         }
 
         #endregion
