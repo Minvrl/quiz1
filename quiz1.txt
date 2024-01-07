@@ -1,0 +1,4 @@
+1.Logical operatorlar - &&(and), ||(or), !(not)
+2.void
+3.method overloading eyni adli methodlarin ferqli parametrler ile ferqli emeliyyatlar yerine yetirmesidir. Mes, 
+static int Sum(int x, int y)  ve  static double Sum(double x, double y) - method overloadingdir.
